@@ -1,4 +1,4 @@
-# Quiz Game with score minting and storaging in Aleo blockchain.
+# Quiz Game with score minting and storaging on Aleo blockchain.
 
 
 ## [Play Now]()
