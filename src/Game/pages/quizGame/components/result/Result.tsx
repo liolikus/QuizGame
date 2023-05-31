@@ -55,7 +55,7 @@ const ShowResult:FC = ():ReactElement => {
  
 
   function AlertMessage() {
-    alert('Wait a few seconds till Waaagh!');
+    alert('Wait a few seconds till the pop-up window appear.');
   }
   
 
