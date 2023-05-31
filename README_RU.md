@@ -1,6 +1,6 @@
 <h1 align="center">Готовая к установке ончейн игра-квиз для Aleo.</h1>
 Игра хранит результаты в блокчейне и в качестве награды игрок может сминтить специальные токены.
-Награда рассчитывается исходя из логики: **Чем больше знаешь, тем больше получаешь**.
+Награда рассчитывается исходя из логики: Чем больше знаешь, тем больше получаешь.
 
 <h2 align="center">Детальный гайд по установке и разработке приложения на Aleo.</h2>
 <h3 align="center">Посмотреть приложение онлайн: https://aleo.org/discord</h3>
@@ -29,7 +29,7 @@
  
  **Поздравляю! Каких-то 10-20-30 минут у вас есть готовое для использования приложение!**
 
-Если вы хотите изменить вопросы в вашем приложении, то просто переходите сюда: https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts не забывая изменить имя пользователя GitHub на своё, где вы можете отредактировать все вопросы, на те, которые вам нужны, например:
+Если вы хотите изменить вопросы в вашем приложении, то просто переходите [сюда](https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts) не забывая изменить имя пользователя GitHub на своё, где вы можете отредактировать все вопросы, на те, которые вам нужны, например:
 ```
 {
     id: Math.random(),
@@ -44,7 +44,7 @@
 ```
 
 ## редактируем вопросы в приложении
-Если вы хотите изменить вопросы в вашем приложении, то просто переходите сюда: https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts не забывая изменить имя пользователя GitHub на своё, где вы можете отредактировать все вопросы, на те, которые вам нужны, например:
+Если вы хотите изменить вопросы в вашем приложении, то просто переходите [сюда](https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts) не забывая изменить имя пользователя GitHub на своё, где вы можете отредактировать все вопросы, на те, которые вам нужны, например:
 ```
 {
     id: Math.random(),
@@ -60,11 +60,12 @@
 ## деплой разных вариантов программы для минта и хранения ревардов
 Для данного приложения задеплоен простой контракт, без возможности передачи награды.
 Контракт хранит ваш результат (u64) и ваш адрес.
-Пример такого контракта можно найти тут: https://github.com/liolikus/quiz_token
+Пример такого контракта можно найти [тут](https://github.com/liolikus/quiz_token)
 
-Если, помимо адреса и результата, вы хотите сохранять, например, ещё дискорд участника **"the_liolik#3786"**, то для этого вы можете использовать такой контракт:https://github.com/liolikus/quiz_token_with_username
+Если, помимо адреса и результата, вы хотите сохранять, например, ещё дискорд участника **"the_liolik#3786"**, то для этого вы можете использовать такой [контракт](https://github.com/liolikus/quiz_token_with_username)
 ## подключаем Leo Wallet
-Полное руководство по подключению Leo Wallet к вашему приложению вы можете изучить тут: https://github.com/demox-labs/aleo-wallet-adapter
+Полное руководство по подключению Leo Wallet к вашему приложению вы можете изучить [тут](https://github.com/demox-labs/aleo-wallet-adapter)
+Огромное за это спасибо потрясающим ребятам из [demox-labs](https://github.com/demox-labs)!
 
 Устанавливаем зависимости командой
 ```
@@ -75,10 +76,43 @@ npm install --save \
     @demox-labs/aleo-wallet-adapter-leo \
     react
 ```
-Пример реализации для данного приложения находится здесь: https://github.com/liolikus/QuizGame/blob/main/src/App.tsx
-Для удобства редактирования **WalletMultiButton** был создан отдельный [компонент] (https://github.com/liolikus/QuizGame/tree/main/src/Game/pages/quizGame/components/navbar)
+Пример реализации для данного приложения находится [здесь](https://github.com/liolikus/QuizGame/blob/main/src/App.tsx)
 
+Для удобства редактирования **WalletMultiButton** был создан отдельный [компонент](https://github.com/liolikus/QuizGame/tree/main/src/Game/pages/quizGame/components/navbar) и .css файл для удобства редактирования.
+
+Компонент, в свою очередь содержится в [Header](https://github.com/liolikus/QuizGame/blob/main/src/Game/pages/quizGame/components/header/Header.tsx)
+```
+    <>
+      <div className="header">
+      <Navbar/>
+        <span className="score">Points: {score}</span>
+        <span className="index">Question {currentQuestionIndexShow} of {totalQuestions}</span>
+        <span className="score" style={{marginTop: ".5rem"}}>{getLifeIcons(life)}</span>
+      </div>
+    </>
+```
 ## минтим награду используя Leo Wallet
+После подключения Leo Wallet наше приложение способно безопасно и удобно взаимодействовать с блокчейном Aleo.
+Полный код страницы можно посмотреть [тут](https://github.com/liolikus/QuizGame/blob/main/src/Game/pages/quizGame/components/result/Result.tsx)
+Непосредственно вызов функции `mint` для программы `quiz_token.aleo` выглядит так:
+  ```
+    const onClick = async () => {
+    if (!publicKey) throw new WalletNotConnectedError();
+    const provingKeyUrl = 'https://provers.s3.us-west-2.amazonaws.com/mint.prover';
+    const score = quizContext?.state.score
+    const inputs = [publicKey, `${score}u64`];
+    const aleoTransaction = Transaction.createTransaction(
+      publicKey,
+      WalletAdapterNetwork.Testnet,
+      'quiz_token.aleo',
+      'mint',
+      inputs,
+      provingKeyUrl
+    );
+  ```
+Не забываем, что для каждой функции нам необходимо хранить наш **ProverKey**, в данном случае это https://provers.s3.us-west-2.amazonaws.com/mint.prover
+
+  
 ## как развернуть приложение локально
 
  
