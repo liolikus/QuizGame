@@ -38,12 +38,8 @@ const App:FC = ():ReactElement => {
             autoConnect
           >
               <WalletModalProvider> 
-                        
-                               
-
                                     <UniversalProvider>
                                               <Routes>
-
                                                         <Route
                                                           path="/topic"
                                                           element={<ChooseTopic />}
@@ -53,26 +49,14 @@ const App:FC = ():ReactElement => {
                                                             path="/"
                                                             element={
                                                                     <QuizProvider>
-                                                                      
                                                                             <QuizCore/>
-                                                                            
-                                                                            
-                                                                      
-                                                                      
                                                                     </QuizProvider>
                                                             }
                                                           >
                                                           </Route>
-
                                               </Routes>
-                                              
-                                  
                                      </UniversalProvider>
-                                      
-                                         
-           
               </WalletModalProvider>
-
   </WalletProvider>
 
     </>
