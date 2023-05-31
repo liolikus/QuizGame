@@ -30,7 +30,7 @@
  **Поздравляю! Каких-то 10-20-30 минут у вас есть готовое для использования приложение!**
 
 Если вы хотите изменить вопросы в вашем приложении, то просто переходите [сюда](https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts) не забывая изменить имя пользователя GitHub на своё, где вы можете отредактировать все вопросы, на те, которые вам нужны, например:
-```
+```tsx
 {
     id: Math.random(),
     question: "2u32 + 2u32 =", // Вопрос
@@ -45,7 +45,7 @@
 
 ## редактируем вопросы в приложении
 Если вы хотите изменить вопросы в вашем приложении, то просто переходите [сюда](https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts) не забывая изменить имя пользователя GitHub на своё, где вы можете отредактировать все вопросы, на те, которые вам нужны, например:
-```
+```tsx
 {
     id: Math.random(),
     question: "2u32 + 2u32 =", // Вопрос
@@ -81,7 +81,7 @@ npm install --save \
 Для удобства редактирования **WalletMultiButton** был создан отдельный [компонент](https://github.com/liolikus/QuizGame/tree/main/src/Game/pages/quizGame/components/navbar) и .css файл для удобства редактирования.
 
 Компонент, в свою очередь содержится в [Header](https://github.com/liolikus/QuizGame/blob/main/src/Game/pages/quizGame/components/header/Header.tsx)
-```
+```tsx
     <>
       <div className="header">
       <Navbar/>
@@ -95,7 +95,7 @@ npm install --save \
 После подключения Leo Wallet наше приложение способно безопасно и удобно взаимодействовать с блокчейном Aleo.
 Полный код страницы можно посмотреть [тут](https://github.com/liolikus/QuizGame/blob/main/src/Game/pages/quizGame/components/result/Result.tsx)
 Непосредственно вызов функции `mint` для программы `quiz_token.aleo` выглядит так:
-  ```
+  ```tsx
     const onClick = async () => {
     if (!publicKey) throw new WalletNotConnectedError();
     const provingKeyUrl = 'https://provers.s3.us-west-2.amazonaws.com/mint.prover';
@@ -110,9 +110,15 @@ npm install --save \
       provingKeyUrl
     );
   ```
-Не забываем, что для каждой функции нам необходимо хранить наш **ProverKey**, в данном случае это https://provers.s3.us-west-2.amazonaws.com/mint.prover
+Не забываем, что для каждой функции нам необходимо хранить наш **ProverKey**, в данном случае это https://provers.s3.us-west-2.amazonaws.com/mint.prover соответсвенно, обращаем максимальное внимание на права доступа для этого файла.
 
-  
 ## как развернуть приложение локально
-
- 
+```
+git clone https://github.com/liolikus/QuizGame && cd QuizGame
+ ```
+ ```
+ yarn
+ ```
+ ```
+ yarn start
+ ```
