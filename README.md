@@ -31,7 +31,7 @@ So let's go:
  **Congrats! We just build an ready-to-use onchain DApp for a few minutes!**
 
 ## editing questions
-If you want to edit the questions in your DApp, then just go [here](https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts) don't forget to change GitHub username to yours, now you can edit questions:
+If you want to edit the questions in your DApp, then just go [here](https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts) and don't forget to change GitHub username to yours, so now you can edit questions:
 ```tsx
 {
     id: Math.random(),
