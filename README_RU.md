@@ -95,6 +95,7 @@ npm install --save \
 ## минтим награду используя Leo Wallet
 После подключения Leo Wallet наше приложение способно безопасно и удобно взаимодействовать с блокчейном Aleo.
 Полный код страницы можно посмотреть [тут](https://github.com/liolikus/QuizGame/blob/main/src/Game/pages/quizGame/components/result/Result.tsx)
+
 Непосредственно вызов функции `mint` для программы `quiz_token.aleo` выглядит так:
   ```tsx
     const onClick = async () => {
@@ -123,3 +124,4 @@ git clone https://github.com/liolikus/QuizGame && cd QuizGame
  ```
  yarn start
  ```
+
