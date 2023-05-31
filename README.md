@@ -9,7 +9,7 @@ The more score you get, the more tokens you mint!
 ## Table of content
   - [how to deploy this DApp on your domain in a few minutes](#how-to-deploy-this-DApp-on-your-domain-in-a-few-minutes)
   - [editing questions](#editing-questions)
-  - [different versions of the program (smart contract) for mint and storage of rewards](#different-versions-of-the-program-(smart contract)-for-mint-and-storage-of-rewards)
+  - [versions of the program (smart contract) for mint and storage of rewards](#versions-of-the-program-for-mint-and-storage-of-rewards)
   - [connecting Leo Wallet](#connecting-Leo-Wallet)
   - [reward minting with Leo Wallet](#reward-minting-with-Leo-Wallet)
   - [how to install locally](#how-to-install-locally)
@@ -45,7 +45,7 @@ If you want to edit the questions in your DApp, then just go [here](https://gith
   },
 ```
 
-## different versions of the program (smart contract) for mint and storage of rewards
+## versions of the program for mint and storage of rewards
 For this DApp deployed a pretty simple Program, which allows to mint but does not allow to transfer the reward.
 Our Program store our `result` (token u64) and reward `owner` (address). 
 This ready-to-deploy Program can be found [here](https://github.com/liolikus/quiz_token)
