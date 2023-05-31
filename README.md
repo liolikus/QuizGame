@@ -6,7 +6,7 @@ The more score you get, the more tokens you mint!
 <h3 align="center">This DApp online: https://aleo.org/discord</h3>
 
 
-## Table of content
+## table of content
   - [how to deploy this DApp on your domain in a few minutes](#how-to-deploy-this-DApp-on-your-domain-in-a-few-minutes)
   - [editing questions](#editing-questions)
   - [versions of the program (smart contract) for mint and storage of rewards](#versions-of-the-program-for-mint-and-storage-of-rewards)
