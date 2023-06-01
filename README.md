@@ -31,7 +31,7 @@ So let's go:
  **Congrats! We just build an ready-to-use onchain DApp for a few minutes!**
 
 ## editing questions
-If you want to edit the questions in your DApp, then just go [here](https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts) and don't forget to change GitHub username to yours, so now you can edit questions:
+If you want to edit the questions in your DApp, your file with questions would be located [here](https://github.com/liolikus/QuizGame/blob/main/src/Game/randomdata.ts) but don't forget to change the GitHub username to yours, in order to edit:
 ```tsx
 {
     id: Math.random(),
@@ -47,12 +47,14 @@ If you want to edit the questions in your DApp, then just go [here](https://gith
 
 ## versions of the program for mint and storage of rewards
 For this DApp deployed a pretty simple Program, which allows to mint but does not allow to transfer the reward.
-Our Program store our `result` (token u64) and reward `owner` (address). 
+The Program store our `result` (amount as `u64`) and reward `owner` (as `address`). 
 This ready-to-deploy Program can be found [here](https://github.com/liolikus/quiz_token)
+
+How to deploy not just the "Hello World" programs you can find in my [medium](https://medium.com/@alex.brunko)
 
 If, in addition to the `owner` and `result`, you want to store, e.g., the participant's discord `username` **"the_liolik#3786"**, you can use this ready-to-deploy [Program](https://github.com/liolikus/quiz_token_with_username)
 
-output `RECORD` sample:
+output sample for `quiz_token_with_username.aleo`:
 ```
           • {
            owner: aleo1xvlh6eyf5lgfv2z5za47j6qkh3uv5e0ga6gdzg5l4rssheymxsqqsnkgc4.private,
@@ -62,6 +64,10 @@ output `RECORD` sample:
            _nonce: 4114874251515989834421702505041058013293543730216157692419564769394314805954group.public
          }
 ```
+Where `discord_username` storing as a `field` type.
+Converting `discord_username` steps:
+  - integer number `604423837765371544759072838070515766` > encrypted Base58 `4Fte3TYDESFwQoFSitC13`
+  - encrypted Base58 `4Fte3TYDESFwQoFSitC13` > decrypted Base58 `the_liolik#3786`
 
 ## connecting Leo Wallet
 Complete documentation about the Leo Wallet connection can be found [here](https://github.com/demox-labs/aleo-wallet-adapter)
