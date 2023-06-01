@@ -63,6 +63,8 @@
 Пример такого контракта можно найти [тут](https://github.com/liolikus/quiz_token)
 
 Если, помимо адреса и результата, вы хотите сохранять, например, ещё дискорд участника **"the_liolik#3786"**, то для этого вы можете использовать такой [контракт](https://github.com/liolikus/quiz_token_with_username)
+
+Как деплоить кастомные контракты, а не просто "Hello World" программы можно найти у меня в [medium](https://medium.com/@alex.brunko)
 ## подключаем Leo Wallet
 Полное руководство по подключению Leo Wallet к вашему приложению вы можете изучить [тут](https://github.com/demox-labs/aleo-wallet-adapter)
 
