@@ -54,9 +54,9 @@ const ShowResult:FC = ():ReactElement => {
 
  
 
-  function AlertMessage() {
-    alert('Wait a few seconds till Waaagh!');
-  }
+  // function AlertMessage() {
+  //   alert('Wait a few seconds till pop-up window appear!');
+  // }
   
 
   return (
@@ -85,7 +85,7 @@ const ShowResult:FC = ():ReactElement => {
           className="reset-btn"
           onClick={() => {
             onClick();
-            AlertMessage();
+            // AlertMessage();
         }}
         >
           Mint Points!

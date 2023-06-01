@@ -1,5 +1,5 @@
 import './answer.css';
-import {FC, ReactElement} from "react"
+import {FC, ReactElement} from "react";
 
 interface AnswerProps {
   answer:string;

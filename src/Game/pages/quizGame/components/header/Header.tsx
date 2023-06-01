@@ -18,17 +18,11 @@ const Header:FC = (): ReactElement => {
   return (
     
     <>
-          
-                          
-
       <div className="header">
-      <Navbar/>
+      {/* <Navbar/> */}
         <span className="score">Points: {score}</span>
         <span className="index">Question {currentQuestionIndexShow} of {totalQuestions}</span>
         <span className="score" style={{marginTop: ".5rem"}}>{getLifeIcons(life)}</span>
-        
-        
-
       </div>
     </>
   )

@@ -210,7 +210,8 @@
 .wallet-adapter-modal-wrapper .wallet-adapter-button {
     width: 20%;
     position: fixed;
-    top: 15%;
+    top: 59%;
+    left: 40%;
     background-color: darkslategray;
 }
 
