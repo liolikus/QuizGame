@@ -83,16 +83,35 @@ npm install --save \
 
 Для удобства редактирования **WalletMultiButton** был создан отдельный [компонент](https://github.com/liolikus/QuizGame/tree/main/src/Game/pages/quizGame/components/navbar) и .css файл для удобства редактирования.
 
-Компонент, в свою очередь содержится в [Header](https://github.com/liolikus/QuizGame/blob/main/src/Game/pages/quizGame/components/header/Header.tsx)
+Компонент, в свою очередь содержится в [App.tsx](https://github.com/liolikus/QuizGame/blob/main/src/App.tsx)
 ```tsx
-    <>
-      <div className="header">
-      <Navbar/>
-        <span className="score">Points: {score}</span>
-        <span className="index">Question {currentQuestionIndexShow} of {totalQuestions}</span>
-        <span className="score" style={{marginTop: ".5rem"}}>{getLifeIcons(life)}</span>
-      </div>
-    </>
+<WalletProvider
+            wallets={wallets}
+            decryptPermission={DecryptPermission.UponRequest}
+            autoConnect
+          >
+              <WalletModalProvider> 
+                                    <UniversalProvider>
+                                              <Routes>
+                                                        <Route
+                                                         path="/topic"
+                                                         element={<ChooseTopic />}
+                                                          >
+                                                          </Route>
+                                                                   <Route
+                                                                    path="/"
+                                                                    element={
+                                                                          <QuizProvider>
+                                                                                              <Navbar/>
+                                                                                  <QuizCore/>
+                                                                           </QuizProvider>
+                                                                             }
+                                                                   >
+                                                          </Route>
+                                               </Routes>
+                                      </UniversalProvider>
+               </WalletModalProvider>
+  </WalletProvider>
 ```
 ## минтим награду используя Leo Wallet
 После подключения Leo Wallet наше приложение способно безопасно и удобно взаимодействовать с блокчейном Aleo.
