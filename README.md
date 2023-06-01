@@ -87,16 +87,35 @@ The Leo Wallet connection example can be found [here](https://github.com/lioliku
 
 For easy editing **WalletMultiButton** separate `<Navbar/>` [component](https://github.com/liolikus/QuizGame/tree/main/src/Game/pages/quizGame/components/navbar) and `navbar.css` file were created.
 
-`<Navbar/>` component built-in in [Header](https://github.com/liolikus/QuizGame/blob/main/src/Game/pages/quizGame/components/header/Header.tsx)
+`<Navbar/>` component built-in in [App.tsx](https://github.com/liolikus/QuizGame/blob/main/src/App.tsx)
 ```tsx
-    <>
-      <div className="header">
-      <Navbar/>
-        <span className="score">Points: {score}</span>
-        <span className="index">Question {currentQuestionIndexShow} of {totalQuestions}</span>
-        <span className="score" style={{marginTop: ".5rem"}}>{getLifeIcons(life)}</span>
-      </div>
-    </>
+<WalletProvider
+            wallets={wallets}
+            decryptPermission={DecryptPermission.UponRequest}
+            autoConnect
+          >
+              <WalletModalProvider> 
+                                    <UniversalProvider>
+                                              <Routes>
+                                                        <Route
+                                                         path="/topic"
+                                                         element={<ChooseTopic />}
+                                                          >
+                                                          </Route>
+                                                                   <Route
+                                                                    path="/"
+                                                                    element={
+                                                                          <QuizProvider>
+                                                                                              <Navbar/>
+                                                                                  <QuizCore/>
+                                                                           </QuizProvider>
+                                                                             }
+                                                                   >
+                                                          </Route>
+                                               </Routes>
+                                      </UniversalProvider>
+               </WalletModalProvider>
+  </WalletProvider>
 ```
 ## reward minting with Leo Wallet
 Now the Leo Wallet connected to our DApp and we can easy and safe interact with Aleo blockchain!
