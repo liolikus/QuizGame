@@ -1,5 +1,5 @@
-<h1 align="center">Ready-to-build React quiz DApp.</h1>
-DApp stores all the results on-chain all players can mint a reward token.
+<h1 align="center">Ready-to-build React-based Aleo DApp.</h1>
+This quiz DApp stores all the results on-chain all players can mint a reward token.
 The more score you get, the more tokens you mint!
 
 <h2 align="center">Complete detailed guide on how to build and deploy Aleo DApp</h2>
