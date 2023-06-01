@@ -104,7 +104,7 @@ Complete integration code can be found [here](https://github.com/liolikus/QuizGa
 
 Sample for the `mint` executing functions for the `quiz_token.aleo` Program:
 
->It seems that **with Leo Wallet 0.0.17+ no need to store our ProverKey**, but as for now, this part is still included in the code so the Program ProverKey >storing here https://provers.s3.us-west-2.amazonaws.com/mint.prover , so this part of the guide will be updated in the future, but in any case, this code is >fully working.
+>It seems that **with Leo Wallet 0.0.17+ no need to store our ProverKey**, but as for now, this part is still included in the code so the Program ProverKey storing here https://provers.s3.us-west-2.amazonaws.com/mint.prover , so this part of the guide will be updated in the future, but in any case, this code is fully working.
 
   ```tsx
     const onClick = async () => {
