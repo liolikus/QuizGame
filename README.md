@@ -72,7 +72,7 @@ Converting `discord_username` steps:
 ## connecting Leo Wallet
 Complete documentation about the Leo Wallet connection can be found [here](https://github.com/demox-labs/aleo-wallet-adapter)
 
-**Many thanks to [demox-labs](https://github.com/demox-labs) Team!**
+>**Many thanks to [demox-labs](https://github.com/demox-labs) Team!**
 
 Install dependencies
 ```
