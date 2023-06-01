@@ -3,7 +3,7 @@ This quiz DApp stores all the results on-chain all players can mint a reward tok
 The more score you get, the more tokens you mint!
 
 <h2 align="center">Complete detailed guide on how to build and deploy Aleo DApp</h2>
-<h3 align="center">This DApp online: https://aleo.org/discord</h3>
+<h3 align="center">This DApp online: https://quiz.aleo.build/</h3>
 
 
 ## table of content
