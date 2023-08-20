@@ -17,7 +17,7 @@ export const Questions = [
     wrongAnswers: [
       "View Key",
       "Private Key",
-      "Seed Phraze"
+      "Seed Phrase"
     ]
   },
 
