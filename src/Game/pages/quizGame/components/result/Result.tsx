@@ -21,10 +21,11 @@ const ShowResult:FC = ():ReactElement => {
     if (!publicKey) throw new WalletNotConnectedError();
 
 
-    const provingKeyUrl = 'https://provers.s3.us-west-2.amazonaws.com/mint.prover';
+    // const provingKeyUrl = 'https://provers.s3.us-west-2.amazonaws.com/mint.prover';
 
     const score = quizContext?.state.score
     const inputs = [publicKey, `${score}u64`];
+    const fee = 100_000
 
     const aleoTransaction = Transaction.createTransaction(
       publicKey,
@@ -32,7 +33,7 @@ const ShowResult:FC = ():ReactElement => {
       'quiz_token.aleo',
       'mint',
       inputs,
-      provingKeyUrl
+      fee
     );
 
     if (requestTransaction) {
