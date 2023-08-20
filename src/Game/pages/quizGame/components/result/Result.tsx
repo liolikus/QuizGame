@@ -21,8 +21,6 @@ const ShowResult:FC = ():ReactElement => {
     if (!publicKey) throw new WalletNotConnectedError();
 
 
-    // const provingKeyUrl = 'https://provers.s3.us-west-2.amazonaws.com/mint.prover';
-
     const score = quizContext?.state.score
     const inputs = [publicKey, `${score}u64`];
     const fee = 100_000
