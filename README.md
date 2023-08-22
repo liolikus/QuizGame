@@ -123,21 +123,19 @@ Complete integration code can be found [here](https://github.com/liolikus/QuizGa
 
 Sample for the `mint` executing functions for the `quiz_token.aleo` Program:
 
->It seems that **with Leo Wallet 0.0.17+ no need to store our ProverKey**, but as for now, this part is still included in the code so the Program ProverKey storing here https://provers.s3.us-west-2.amazonaws.com/mint.prover , so this part of the guide will be updated in the future, but in any case, this code is fully working.
 
   ```tsx
-    const onClick = async () => {
-    if (!publicKey) throw new WalletNotConnectedError();
-    const provingKeyUrl = 'https://provers.s3.us-west-2.amazonaws.com/mint.prover';
     const score = quizContext?.state.score
     const inputs = [publicKey, `${score}u64`];
+    const fee = 100_000
+
     const aleoTransaction = Transaction.createTransaction(
       publicKey,
       WalletAdapterNetwork.Testnet,
       'quiz_token.aleo',
       'mint',
       inputs,
-      provingKeyUrl
+      fee
     );
   ```
 
